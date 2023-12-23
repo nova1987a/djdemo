@@ -1,2 +1,1 @@
-The folder "blog/" is based on Django class-based API ; folder "news" is based on djangorestframework , refer to: https://ithelp.ithome.com.tw/articles/10234100
-
+The package is created with Django framework used for my first web demo site, I'll add/modify some interesting function if possible in the future! :-) 
