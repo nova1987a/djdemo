@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+
+{% block index %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mt-3 left">
+            <!-- Blog Entries Column -->
+                {% for blog in blog_list %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ blog.title }}</h2>
+                        <p class="card-text text-muted h6">{{ blog.author }} | {{ blog.created_on}} </p>
+                        <p class="card-text">{{blog.content|slice:":200" | safe}}</p>
+                        <p class="card-text text-muted h6">Tags: {{blog.display_tag}}</p>
+                        <a href="{{ blog.get_absolute_url }}" class="btn btn-primary">Read More &rarr;</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-4 float-right ">
+                {% block sidebar %}
+                <!-- Sidebar Widgets Column -->
+	            <div class="card my-4">
+	                <h5 class="card-header">About Us</h5>
+                    <div class="card-body">
+                        <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django'..!</p>
+                        <a href="https://www.djangoproject.com/" class="btn btn-danger">Know more!</a>
+                    </div>
+                </div>
+                {% endblock sidebar %}
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+  
